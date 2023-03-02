@@ -1,0 +1,87 @@
+<%- include("partials/header"); -%>
+
+
+
+
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+              <a href="#" class="nav_logo">
+                <i class='bx bx-layer nav_logo-icon'></i>
+                <span class="nav_logo-name">GameSwitch LLC</span>
+              </a>
+              <div class="nav_list">
+                <a href="/" class="nav_link">
+                  <i class='bx bx-plus-circle nav_icon'></i>
+                  <span class="nav_name">Add Game</span>
+                </a>
+                <a href="/updategame" class="nav_link">
+                  <i class='bx bx-pencil nav_icon'></i>
+                  <span class="nav_name">Update Game</span>
+                </a>
+                <a href="/delgame" class="nav_link">
+                  <i class='bx bx-trash nav_icon'></i>
+                  <span class="nav_name">Delete Game</span>
+                </a>
+                <a href="/viewall" class="nav_link  active">
+                    <i class='bx bx-book nav_icon'></i>
+                    <span class="nav_name">View all Games</span>
+                </a>
+                <a href="/orders" class="nav_link">
+                  <i class='bx bx-cart nav_icon'></i>
+                  <span class="nav_name">Orders</span>
+                </a>
+                <a href="/account" class="nav_link">
+                  <i class='bx bx-user nav_icon'></i>
+                  <span class="nav_name">My Account</span>
+                </a>
+              </div>
+            </div>
+            <a href="/logout" class="nav_link">
+              <i class='bx bx-log-out nav_icon'></i>
+              <span class="nav_name">SignOut</span>
+            </a>
+          </nav>
+    </div>
+    <!--Container Main start-->
+    <div class="height-100 bg-light">
+        <h4 style="font-weight: bolder; margin-bottom: 4rem;">All Games</h4>
+        <table class="table table-bordered table-hover">
+          <thead>
+              <tr>
+                  <th>Game Name</th>
+                  <th>Game Price</th>
+                  <th>Game IMG Link</th>
+              </tr>
+          </thead>
+          <tbody>
+            <% foundGames.forEach(function(game){ %>
+                <tr>
+                  <td><a style="color: #4723d9; font-weight: bold;"><%= game.gameName %></a></td>
+                  <td>&#x20B9;<%= game.gamePrice %></td>
+                  <td><%= game.gameCover %></td>
+                </tr>  
+            <% }); %>                 
+          </tbody>
+      </table>
+    </div>
+    <!--Container Main end-->
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer"); -%>
